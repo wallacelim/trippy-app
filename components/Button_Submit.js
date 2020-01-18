@@ -81,7 +81,7 @@ export default class Button_Submit extends Component {
             {this.state.isLoading ? (
               <Image source={spinner} style={styles.image} />
             ) : (
-              <Text style={styles.text}>LOGIN</Text>
+              <Text style={styles.text}>Log in</Text>
             )}
           </TouchableOpacity>
           <Animated.View
@@ -96,45 +96,45 @@ export default class Button_Submit extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: -95,
+    top: -100,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start', //top of the white box
+    zIndex: 99
   },
   button: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignSelf: 'center',
     backgroundColor: '#2C7A7B',
-    height: MARGIN,
+    borderColor: '#2C7A7B',
+    borderWidth: 0,
     borderRadius: 20,
+    height: 50,
+    width: 310,
     zIndex: 100,
   },
-  circle: {
+  circle: { //expanding circle
     height: MARGIN,
     width: MARGIN,
     marginTop: -MARGIN,
-    borderWidth: 1,
-    borderColor: '#2C7A7B',
-    borderRadius: 100,
+    borderWidth: 0.1,
+    borderColor: '#81E6D9',
+    borderRadius: 20,
     alignSelf: 'center',
     zIndex: 99,
-    backgroundColor: '#81E6D9',
+    backgroundColor: '#2C7A7B',
   },
   text: {
-    width: 53,
-    height: 16,
-    // left: calculate(50% - 53/2),
-    // top: math(50% - 16/2),
-
-    // fontFamily: Arial,
-    // fontStyle: normal,
-    // fontWeight: bold,
-    fontSize: 14,
-    lineHeight: 16,
+    alignSelf: 'center',
+    marginTop: 15,
+    height: 20,
+    fontSize: 16,
     color: 'white',
+    fontWeight: "bold",
+    zIndex: 101,
     //backgroundColor: 'transparent',
   },
   image: {
+    alignSelf: 'center',
     width: 60,
-    height: 60,
+    height: 50,
   },
 });

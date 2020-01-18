@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, KeyboardAvoidingView } from 'react-native';
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  Text
+} from 'react-native';
 
 import UserInput from './UserInput';
 
@@ -11,17 +15,19 @@ export default class Form extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
+        <Text style={styles.text}>Email</Text>
         <UserInput
           source={usernameImg}
-          placeholder="Username"
+          placeholder="Enter your email"
           autoCapitalize={'none'}
           returnKeyType={'done'}
           autoCorrect={false}
         />
+        <Text style={styles.text}>Password</Text>
         <UserInput
           source={passwordImg}
-          //secureTextEntry={this.state.showPass}
-          placeholder="Password"
+          secureTextEntry={true}
+          placeholder="Enter your password"
           returnKeyType={'done'}
           autoCapitalize={'none'}
           autoCorrect={false}
@@ -35,5 +41,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 2,
     alignItems: 'center',
-  },
+  }, text: {
+    color: 'white',
+    flex: 0.08,
+    textAlign: "left",
+    alignSelf: "stretch",
+    paddingLeft: 60,
+    fontWeight: "bold",
+  }
 });
