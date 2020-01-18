@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 //import {Actions, ActionConst} from 'react-native-router-flux';
 
-import spinner from '../images/loading_transparent.gif';
+import spinner from '../../images/loading_transparent.gif';
 
 // const DEVICE_WIDTH = Dimensions.get('window').width;
 // const DEVICE_HEIGHT = Dimensions.get('window').height;
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     top: -100,
     alignItems: 'center',
     justifyContent: 'flex-start', //top of the white box
-    zIndex: 99
+    zIndex: 99,
   },
   button: {
     alignSelf: 'center',
@@ -111,7 +111,8 @@ const styles = StyleSheet.create({
     width: 310,
     zIndex: 100,
   },
-  circle: { //expanding circle
+  circle: {
+    //expanding circle
     height: MARGIN,
     width: MARGIN,
     marginTop: -MARGIN,
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
     height: 20,
     fontSize: 16,
     color: 'white',
-    fontWeight: "bold",
+    fontWeight: 'bold',
     zIndex: 101,
     //backgroundColor: 'transparent',
   },

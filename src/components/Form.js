@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyleSheet,
-  KeyboardAvoidingView,
-  Text
-} from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Text } from 'react-native';
 
 import UserInput from './UserInput';
 
-import usernameImg from '../images/username.png';
-import passwordImg from '../images/password.png';
+import usernameImg from '../../images/username.png';
+import passwordImg from '../../images/password.png';
 
 export default class Form extends Component {
   render() {
@@ -41,12 +37,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 2,
     alignItems: 'center',
-  }, text: {
+  },
+  text: {
     color: 'white',
     flex: 0.08,
-    textAlign: "left",
-    alignSelf: "stretch",
+    textAlign: 'left',
+    alignSelf: 'stretch',
     paddingLeft: 60,
-    fontWeight: "bold",
-  }
+    fontWeight: 'bold',
+  },
 });
