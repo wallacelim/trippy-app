@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, TextInput, Image} from 'react-native';
+import { StyleSheet, View, TextInput, Image } from 'react-native';
 
 export default class UserInput extends Component {
   render() {
     return (
       <View style={styles.inputWrapper}>
         <Image source={this.props.source} style={styles.inlineImg} />
-        <View style ={styles.inputContainer}>
-            <TextInput
+        <View style={styles.inputContainer}>
+          <TextInput
             style={styles.input}
             placeholder={this.props.placeholder}
             secureTextEntry={this.props.secureTextEntry}
@@ -17,7 +17,7 @@ export default class UserInput extends Component {
             returnKeyType={this.props.returnKeyType}
             placeholderTextColor="white"
             underlineColorAndroid="transparent"
-            />
+          />
         </View>
       </View>
     );

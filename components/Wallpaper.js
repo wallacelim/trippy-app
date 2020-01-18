@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, ImageBackground} from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 
 import bgSrc from '../images/background.gif';
 
