@@ -15,7 +15,7 @@ const AppStack = createStackNavigator(
     headerMode: 'none',
   }
 );
-const AuthStack = createStackNavigator(
+const AuthStack = createSwitchNavigator(
   {
     Login: LoginScreen,
     Signup: SignupScreen,

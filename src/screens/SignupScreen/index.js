@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 export const SignupScreen = ({ navigation }) => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-      <TrippyLogo style={{ marginBottom: Spacing.L }} />
+      <TrippyLogo style={{ marginBottom: Spacing.M }} />
       <Input
         style={{ marginBottom: Spacing.M }}
         label="Full name"
