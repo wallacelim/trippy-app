@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View } from 'react-native';
 import React, { Component } from 'react';
 
 export default class Signup_Prompt extends Component {
@@ -6,11 +6,10 @@ export default class Signup_Prompt extends Component {
         return(
             <View style={styles.container}>
                 <Text style={styles.normal}>No account yet?
-                <Text onPress={()=> {}} style={styles.signup}> Sign up 
+                <Text style={styles.signup}> Sign up 
                 <Text style={styles.normal}> instead!
                 </Text></Text></Text>
             </View>
-            
         );
     }
 }
