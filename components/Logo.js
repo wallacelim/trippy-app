@@ -7,6 +7,7 @@ export default class Logo extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={{height: 170, backgroundColor: 'transparent'}} />
         <Image source={logoImg} style={styles.image} />
         <Text style={styles.text}>TRIPPY</Text>
       </View>

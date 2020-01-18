@@ -5,6 +5,7 @@ import Wallpaper from './Wallpaper';
 import Logo from './Logo';
 import Form from './Form';
 import Button_Submit from './Button_Submit';
+import Signup_Prompt from './Signup_Prompt';
 
 export default class LoginScreen extends Component {
     render() {
@@ -13,6 +14,7 @@ export default class LoginScreen extends Component {
           <Logo />
           <Form />
           <Button_Submit/>
+          <Signup_Prompt/>
         </Wallpaper>
       );
     }

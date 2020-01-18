@@ -44,14 +44,14 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     backgroundColor: 'rgba(230, 255, 255, 0.4)',
-    width: 250,
+    width: 310,
     height: 50,
     marginHorizontal: 20,
     paddingLeft: 45,
     borderRadius: 20,
   },
   inputWrapper: {
-    flex: 0.3,
+    flex: 0.25,
   },
   inlineImg: {
     position: 'absolute',
