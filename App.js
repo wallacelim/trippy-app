@@ -1,35 +1,36 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React, { Component } from 'react';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
-import NavigationService from './NavigationService';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
-import LoginScreen from './components/LoginScreen';
-import SignupScreen from './components/SignupScreen';
+import { LoginScreen } from './src/screens/LoginScreen';
+import { SignupScreen } from './src/screens/SignupScreen';
+import MapScreen from './src/screens/MapScreen';
 
-
-const MainNavigator = createStackNavigator(
+const AppStack = createStackNavigator(
   {
-    //Login: {screen: LoginScreen},
-    Signup: {screen: SignupScreen},
+    Map: MapScreen,
   },
-  { 
-    headerMode: 'none' },
   {
-    initialRouteName: 'Login',
+    headerMode: 'none',
+  }
+);
+const AuthStack = createStackNavigator(
+  {
+    Login: LoginScreen,
+    Signup: SignupScreen,
+  },
+  {
+    headerMode: 'none',
   }
 );
 
-const AppContainer = createAppContainer(MainNavigator);
-
-export default class App extends Component {
-  render() {
-    return (
-      <AppContainer
-        ref={navigatorRef => {
-          NavigationService.setTopLevelNavigator(navigatorRef);
-        }}
-      />
-    );
-  }
-}
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      Auth: AuthStack,
+      App: AppStack,
+    },
+    {
+      initialRouteName: 'Auth',
+    }
+  )
+);

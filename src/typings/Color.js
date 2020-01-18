@@ -1,0 +1,23 @@
+export const Color = {
+  Teal900: '#234E52',
+  Teal800: '#285E61',
+  Teal700: '#2C7A7B',
+  Teal600: '#319795',
+  Teal500: '#38B2AC',
+  Teal400: '#4FD1C5',
+  Teal300: '#81E6D9',
+  Teal200: '#B2F5EA',
+  Teal100: '#E6FFFA',
+
+  Black: '#000',
+  White: '#FFF',
+  Gray900: '#1A202C',
+  Gray800: '#2D3748',
+  Gray700: '#4A5568',
+  Gray600: '#718096',
+  Gray500: '#A0AEC0',
+  Gray400: '#CBD5E0',
+  Gray300: '#E2E8F0',
+  Gray200: '#EDF2F7',
+  Gray100: '#F7FAFC',
+};
