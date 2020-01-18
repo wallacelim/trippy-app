@@ -16,6 +16,11 @@ const styles = StyleSheet.create({
     bottom: Spacing.L,
     flexDirection: 'column-reverse',
   },
+  projectSelect: {
+    position: 'absolute',
+    left: Spacing.L,
+    bottom: Spacing.L,
+  },
 });
 
 export const MapScreen = ({ navigation }) => {
@@ -56,6 +61,11 @@ export const MapScreen = ({ navigation }) => {
         />
         <SecondaryButton text="Details" onPress={() => {}} />
       </View>
+      <SecondaryButton
+        style={styles.projectSelect}
+        text="wacknwoll"
+        onPress={() => {}}
+      />
     </View>
   );
 };
