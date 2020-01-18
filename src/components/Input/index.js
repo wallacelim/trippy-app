@@ -32,7 +32,8 @@ export const Input = ({
   placeholder,
   hideInput,
   value,
-  onChangeInput,
+  onChangeText,
+  onBlur,
 }) => {
   return (
     <View style={style}>
@@ -42,6 +43,9 @@ export const Input = ({
         placeholder={placeholder}
         placeholderTextColor={Color.Gray500}
         secureTextEntry={hideInput}
+        onChangeText={onChangeText}
+        onBlur={onBlur}
+        value={value}
       />
     </View>
   );
