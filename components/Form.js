@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  StyleSheet,
-  KeyboardAvoidingView
-} from 'react-native';
+import { StyleSheet, KeyboardAvoidingView } from 'react-native';
 
 import UserInput from './UserInput';
 
@@ -11,7 +8,6 @@ import usernameImg from '../images/username.png';
 import passwordImg from '../images/password.png';
 
 export default class Form extends Component {
-
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
