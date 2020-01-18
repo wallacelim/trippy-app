@@ -30,7 +30,7 @@ export const LoginScreen = ({ navigation }) => {
       initialValues={{ email: '', password: '' }}
       onSubmit={values => {
         console.log(JSON.stringify(values));
-        fetch('https://mywebsite.com/endpoint/', {
+        fetch('http://www.mocky.io/v2/5e23630e2f00008170222743', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -42,14 +42,20 @@ export const LoginScreen = ({ navigation }) => {
           }),
         })
           .then(response => {
+            console.log(JSON.stringify(response));
             if (response.status !== 200) {
               throw new Error(response.error);
-            } else {
-              console.log(response.email);
-              //set user credentials
             }
+            return response.json();
+          })
+          .then(response => {
+            console.log(response);
+            navigation.navigate('Map', {
+              User: response,
+            });
           })
           .catch(error => {
+            console.log('error caught');
             alert(error);
           });
       }}
