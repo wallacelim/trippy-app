@@ -8,7 +8,7 @@ import { ManageScreen } from './src/screens/ManageScreen';
 
 const AppStack = createStackNavigator(
   {
-    //Map: MapScreen,
+    Map: MapScreen,
     Manage: ManageScreen,
   },
   {

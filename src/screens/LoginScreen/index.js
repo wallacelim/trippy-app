@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, KeyboardAvoidingView } from 'react-native';
 import { Formik } from 'formik';
 
 import { TrippyLogo } from '../../components/TrippyLogo';
@@ -29,8 +29,7 @@ export const LoginScreen = ({ navigation }) => {
     <Formik
       initialValues={{ email: '', password: '' }}
       onSubmit={values => {
-        console.log(JSON.stringify(values));
-        fetch('http://localhost:5000/login', {
+        fetch('http://www.mocky.io/v2/5e23630e2f00008170222743', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -42,21 +41,18 @@ export const LoginScreen = ({ navigation }) => {
           }),
         })
           .then(response => {
-            console.log(JSON.stringify(response));
             if (response.status !== 200) {
               throw new Error(response.error);
             }
             return response.json();
           })
           .then(response => {
-            console.log(response);
             navigation.navigate('Map', {
               User: response,
             });
           })
           .catch(error => {
-            console.log('error caught');
-            alert(error);
+            console.log(error);
           });
       }}
     >
@@ -71,7 +67,6 @@ export const LoginScreen = ({ navigation }) => {
             style={{ marginBottom: Spacing.M }}
             label="Email"
             placeholder="Enter your email"
-            //Formik tings
             onChangeText={handleChange('email')}
             onBlur={handleBlur('email')}
             value={values.email}
@@ -81,7 +76,6 @@ export const LoginScreen = ({ navigation }) => {
             label="Password"
             placeholder="Enter your password"
             hideInput
-            //Formik Tings
             onChangeText={handleChange('password')}
             onBlur={handleBlur('password')}
             value={values.password}
@@ -89,7 +83,6 @@ export const LoginScreen = ({ navigation }) => {
           <PrimaryButton
             style={{ marginBottom: Spacing.S }}
             text="Log in"
-            //Formik
             onPress={handleSubmit}
           />
           <View style={styles.promptContainer}>
