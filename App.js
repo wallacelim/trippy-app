@@ -6,7 +6,7 @@ import { SignupScreen } from './src/screens/SignupScreen';
 import { MapScreen } from './src/screens/MapScreen';
 import { ManageScreen } from './src/screens/ManageScreen';
 
-const AppStack = createSwitchNavigator(
+const AppStack = createStackNavigator(
   {
     Map: MapScreen,
     Manage: ManageScreen,
