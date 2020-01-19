@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, Modal } from 'react-native';
 import MapView from 'react-native-maps';
 
 import { PrimaryButton } from '../../components/Button';
@@ -7,6 +7,11 @@ import { SecondaryButton } from '../../components/Button';
 import { Spacing } from '../../typings/Spacing';
 import { Color } from '../../typings/Color';
 import { FontSize } from '../../typings/FontSize';
+import {
+  useDrawerRadio,
+  DrawerRadioItem,
+  DrawerRadio,
+} from '../../components/DrawerRadio';
 
 const styles = StyleSheet.create({
   mapView: {
@@ -63,6 +68,8 @@ export const MapScreen = ({ navigation }) => {
     );
   }, [setRegion]);
 
+  const { visible, show, hide } = useDrawerRadio(false);
+
   return (
     <View style={{ flex: 1 }}>
       <MapView
@@ -71,6 +78,9 @@ export const MapScreen = ({ navigation }) => {
         onRegionChangeComplete={setRegion}
         showsUserLocation
       />
+      <View style={styles.avatar}>
+        <Text style={styles.avatarText}>K</Text>
+      </View>
       <View style={styles.footerContainer}>
         <PrimaryButton
           style={{ marginTop: Spacing.S }}
@@ -82,11 +92,13 @@ export const MapScreen = ({ navigation }) => {
       <SecondaryButton
         style={styles.projectSelect}
         text="wacknwoll"
-        onPress={() => {}}
+        onPress={show}
       />
-      <View style={styles.avatar}>
-        <Text style={styles.avatarText}>K</Text>
-      </View>
+      <DrawerRadio visible={visible} hide={hide}>
+        <DrawerRadioItem text="wacknwoll" selected />
+        <DrawerRadioItem text="reliving singapore" />
+        <DrawerRadioItem text="mountains" />
+      </DrawerRadio>
     </View>
   );
 };
