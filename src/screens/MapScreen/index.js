@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, StatusBar } from 'react-native';
 import MapView from 'react-native-maps';
 
 import { PrimaryButton } from '../../components/Button';
 import { SecondaryButton } from '../../components/Button';
 import { Spacing } from '../../typings/Spacing';
+import { Color } from '../../typings/Color';
+import { FontSize } from '../../typings/FontSize';
 
 const styles = StyleSheet.create({
   mapView: {
@@ -20,6 +22,22 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: Spacing.L,
     bottom: Spacing.L,
+  },
+  avatar: {
+    position: 'absolute',
+    top: Spacing.L + StatusBar.currentHeight,
+    right: Spacing.L,
+    backgroundColor: Color.Teal500,
+    width: Spacing.XL,
+    height: Spacing.XL,
+    borderRadius: Spacing.XL,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  avatarText: {
+    fontSize: FontSize.L,
+    fontWeight: 'bold',
+    color: Color.White,
   },
 });
 
@@ -66,6 +84,9 @@ export const MapScreen = ({ navigation }) => {
         text="wacknwoll"
         onPress={() => {}}
       />
+      <View style={styles.avatar}>
+        <Text style={styles.avatarText}>K</Text>
+      </View>
     </View>
   );
 };
