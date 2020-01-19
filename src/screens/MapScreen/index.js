@@ -182,7 +182,7 @@ export const MapScreen = ({ navigation }) => {
         ))}
       </MapView>
       <View style={styles.avatar}>
-        <Text style={styles.avatarText}>K</Text>
+        <Text style={styles.avatarText}>W</Text>
       </View>
       <View style={styles.footerContainer}>
         <PrimaryButton
@@ -190,7 +190,12 @@ export const MapScreen = ({ navigation }) => {
           text="Camera"
           onPress={() => {}}
         />
-        <SecondaryButton text="Details" onPress={() => {}} />
+        <SecondaryButton
+          text="Details"
+          onPress={() => {
+            navigation.navigate('Manage');
+          }}
+        />
       </View>
       <SecondaryButton
         style={styles.projectSelect}
