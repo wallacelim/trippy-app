@@ -46,7 +46,9 @@ export const SignupScreen = ({ navigation }) => {
       <PrimaryButton
         style={{ marginBottom: Spacing.S }}
         text="Sign up"
-        onPress={() => {}}
+        onPress={() => {
+          navigation.navigate('Map');
+        }}
       />
       <View style={styles.promptContainer}>
         <Link

@@ -31,13 +31,7 @@ export const ManageScreen = ({ navigation }) => {
           style={{ fontSize: 24, fontWeight: 'bold', color: Color.Teal900 }}
         >
           {' '}
-          Journey Details /
-        </Text>
-        <Text
-          style={{ fontSize: 24, fontWeight: 'bold', color: Color.Gray600 }}
-        >
-          {' '}
-          wacknwoll
+          Journey Details
         </Text>
       </View>
       <View
@@ -72,7 +66,7 @@ export const ManageScreen = ({ navigation }) => {
           borderRadius: 0,
         }}
         onPress={() => {}}
-        text="Chloe Tanny"
+        text="Chloe TransferProtocol"
       />
       <PrimaryButton
         style={{
@@ -96,6 +90,23 @@ export const ManageScreen = ({ navigation }) => {
         onPress={() => {}}
         text="Kevin PutRequest"
       />
+      <View style={{ paddingTop: 20, flexDirection: 'row' }}>
+        <Text
+          style={{ fontSize: 20, fontWeight: 'bold', color: Color.Gray600 }}
+        >
+          Start date:{' '}
+        </Text>
+        <Text
+          style={{
+            marginTop: 5,
+            fontSize: FontSize.M,
+            fontWeight: 'bold',
+            color: Color.Gray500,
+          }}
+        >
+          19 Jan 2020, 12:30PM{' '}
+        </Text>
+      </View>
       <View style={{ paddingTop: 40 }}>
         <PrimaryButton
           style={{ alignItems: 'center' }}
