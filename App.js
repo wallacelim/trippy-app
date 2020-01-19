@@ -3,17 +3,16 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import { LoginScreen } from './src/screens/LoginScreen';
 import { SignupScreen } from './src/screens/SignupScreen';
-import MapScreen from './src/screens/MapScreen';
+import { MapScreen } from './src/screens/MapScreen';
 import { ManageScreen } from './src/screens/ManageScreen';
 
-const AppStack = createStackNavigator(
+const AppStack = createSwitchNavigator(
   {
     Map: MapScreen,
     Manage: ManageScreen,
   },
   {
     headerMode: 'none',
-    initialRouteName: 'Manage',
   }
 );
 const AuthStack = createSwitchNavigator(
@@ -33,7 +32,7 @@ export default createAppContainer(
       App: AppStack,
     },
     {
-      initialRouteName: 'App',
+      initialRouteName: 'Auth',
     }
   )
 );

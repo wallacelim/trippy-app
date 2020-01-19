@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, Header } from 'react-native';
 import MapView from 'react-native-maps';
+import { Formik } from 'formik';
 
 import { PrimaryButton } from '../../components/Button';
 import { SecondaryButton } from '../../components/Button';
@@ -77,7 +78,12 @@ export const MapScreen = ({ navigation }) => {
           text="Camera"
           onPress={() => {}}
         />
-        <SecondaryButton text="Details" onPress={() => {}} />
+        <SecondaryButton
+          text="Details"
+          onPress={() => {
+            navigation.navigate('Manage');
+          }}
+        />
       </View>
       <SecondaryButton
         style={styles.projectSelect}
@@ -85,7 +91,7 @@ export const MapScreen = ({ navigation }) => {
         onPress={() => {}}
       />
       <View style={styles.avatar}>
-        <Text style={styles.avatarText}>K</Text>
+        <Text style={styles.avatarText}>W</Text>
       </View>
     </View>
   );
