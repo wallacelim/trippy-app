@@ -59,25 +59,85 @@ const styles = StyleSheet.create({
   },
 });
 
-const photos = [
-  {
-    url:
-      'https://images.unsplash.com/photo-1579374358521-7b4fa4b276d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80',
-    latitude: 1.3059746,
-    longitude: 103.7754383,
-  },
-  {
-    url:
-      'https://images.unsplash.com/photo-1579325010286-1e287f5a03e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-    latitude: 1.5543976,
-    longitude: 103.7441357,
-  },
-  {
-    url: 'https://trippy-hnr.s3-ap-southeast-1.amazonaws.com/cat.jpg',
-    latitude: 1.4564114,
-    longitude: 103.6054502,
-  },
-];
+const tripIds = ['wacknwoll', 'reliving singapore', 'mountains'];
+
+const photos = {
+  [tripIds[0]]: [
+    {
+      url:
+        'https://images.unsplash.com/photo-1579374358521-7b4fa4b276d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80',
+      latitude: 1.3059746,
+      longitude: 103.7754383,
+    },
+    {
+      url:
+        'https://images.unsplash.com/photo-1579325010286-1e287f5a03e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      latitude: 1.5543976,
+      longitude: 103.7441357,
+    },
+    {
+      url: 'https://trippy-hnr.s3-ap-southeast-1.amazonaws.com/cat.jpg',
+      latitude: 1.4564114,
+      longitude: 103.6054502,
+    },
+  ],
+  [tripIds[1]]: [
+    {
+      url:
+        'https://images.unsplash.com/photo-1579374358521-7b4fa4b276d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80',
+      latitude: 1.7059746,
+      longitude: 102.7754383,
+    },
+    {
+      url:
+        'https://images.unsplash.com/photo-1579325010286-1e287f5a03e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      latitude: 1.3543976,
+      longitude: 103.9441357,
+    },
+    {
+      url: 'https://trippy-hnr.s3-ap-southeast-1.amazonaws.com/cat.jpg',
+      latitude: 1.5564114,
+      longitude: 103.0054502,
+    },
+    {
+      url:
+        'https://images.unsplash.com/photo-1579357926184-97099e1d7829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      latitude: 1.5564114,
+      longitude: 103.0054502,
+    },
+  ],
+  [tripIds[2]]: [
+    {
+      url:
+        'https://images.unsplash.com/photo-1579374358521-7b4fa4b276d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1955&q=80',
+      latitude: 1.8059746,
+      longitude: 103.0754383,
+    },
+    {
+      url:
+        'https://images.unsplash.com/photo-1579325010286-1e287f5a03e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      latitude: 1.4543976,
+      longitude: 103.1441357,
+    },
+    {
+      url: 'https://trippy-hnr.s3-ap-southeast-1.amazonaws.com/cat.jpg',
+      latitude: 1.8564114,
+      longitude: 102.6054502,
+    },
+    {
+      url:
+        'https://images.unsplash.com/photo-1579357926184-97099e1d7829?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      latitude: 2.0564114,
+      longitude: 103.1054502,
+    },
+    {
+      url:
+        'https://images.unsplash.com/photo-1558980664-769d59546b3d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      latitude: 1.964114,
+      longitude: 103.6054502,
+    },
+  ],
+};
 
 export const MapScreen = ({ navigation }) => {
   const [region, setRegion] = useState({
@@ -103,6 +163,8 @@ export const MapScreen = ({ navigation }) => {
 
   const { visible, show, hide } = useDrawerRadio(false);
 
+  const [selectedTripId, setSelectedTripId] = useState(tripIds[0]);
+
   return (
     <View style={{ flex: 1 }}>
       <MapView
@@ -111,7 +173,7 @@ export const MapScreen = ({ navigation }) => {
         onRegionChangeComplete={setRegion}
         showsUserLocation
       >
-        {photos.map(({ url, latitude, longitude }) => (
+        {photos[selectedTripId].map(({ url, latitude, longitude }) => (
           <Marker coordinate={{ latitude, longitude }}>
             <View style={styles.marker}>
               <Image style={styles.markerImage} source={{ uri: url }}></Image>
@@ -136,9 +198,16 @@ export const MapScreen = ({ navigation }) => {
         onPress={show}
       />
       <DrawerRadio visible={visible} hide={hide}>
-        <DrawerRadioItem text="wacknwoll" selected />
-        <DrawerRadioItem text="reliving singapore" />
-        <DrawerRadioItem text="mountains" />
+        {tripIds.map(tripId => (
+          <DrawerRadioItem
+            text={tripId}
+            onPress={() => {
+              setSelectedTripId(tripId);
+              hide();
+            }}
+            selected={tripId === selectedTripId}
+          />
+        ))}
       </DrawerRadio>
     </View>
   );

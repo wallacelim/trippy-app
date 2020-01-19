@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 
 import { Spacing } from '../../typings/Spacing';
 import { Color } from '../../typings/Color';
@@ -41,17 +41,24 @@ const styles = StyleSheet.create({
   },
 });
 
-export const DrawerRadioItem = ({ text, selected }) => {
+export const DrawerRadioItem = ({ text, selected, onPress }) => {
   return (
-    <View style={styles.item}>
-      <Text style={styles.text}>{text}</Text>
-      {selected ? (
-        <View style={styles.selectedRadio} />
-      ) : (
-        <View style={styles.unselectedRadioOuter}>
-          <View style={styles.unselectedRadioInner} />
-        </View>
-      )}
-    </View>
+    <TouchableHighlight
+      style={styles.item}
+      onPress={onPress}
+      underlayColor={Color.Gray400}
+      activeOpacity={1}
+    >
+      <>
+        <Text style={styles.text}>{text}</Text>
+        {selected ? (
+          <View style={styles.selectedRadio} />
+        ) : (
+          <View style={styles.unselectedRadioOuter}>
+            <View style={styles.unselectedRadioInner} />
+          </View>
+        )}
+      </>
+    </TouchableHighlight>
   );
 };
