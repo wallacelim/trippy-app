@@ -174,7 +174,7 @@ export const MapScreen = ({ navigation }) => {
         showsUserLocation
       >
         {photos[selectedTripId].map(({ url, latitude, longitude }) => (
-          <Marker coordinate={{ latitude, longitude }}>
+          <Marker key={url} coordinate={{ latitude, longitude }}>
             <View style={styles.marker}>
               <Image style={styles.markerImage} source={{ uri: url }}></Image>
             </View>
@@ -199,12 +199,13 @@ export const MapScreen = ({ navigation }) => {
       </View>
       <SecondaryButton
         style={styles.projectSelect}
-        text="wacknwoll"
+        text={selectedTripId}
         onPress={show}
       />
       <DrawerRadio visible={visible} hide={hide}>
         {tripIds.map(tripId => (
           <DrawerRadioItem
+            key={tripId}
             text={tripId}
             onPress={() => {
               setSelectedTripId(tripId);
