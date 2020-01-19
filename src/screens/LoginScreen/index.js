@@ -30,7 +30,7 @@ export const LoginScreen = ({ navigation }) => {
       initialValues={{ email: '', password: '' }}
       onSubmit={values => {
         console.log(JSON.stringify(values));
-        fetch('http://www.mocky.io/v2/5e23630e2f00008170222743', {
+        fetch('http://localhost:5000/login', {
           method: 'POST',
           headers: {
             Accept: 'application/json',
