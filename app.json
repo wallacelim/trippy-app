@@ -24,7 +24,7 @@
       "package": "com.trippy.app",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyAFCa4jjoT3_oGxjPSUEd8tfvAcpmRLKA4"
+          "apiKey": "XXX"
         }
       }
     }
